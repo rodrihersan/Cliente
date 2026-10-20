@@ -1,0 +1,44 @@
+body {
+  font-family: "Times New Roman";
+  background-color: #f0f0f0;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+h1 {
+  color: white;
+  background-color: #cc3300;
+  padding: 15px;
+}
+
+.nota {
+  font-style: italic;
+}
+
+table {
+  border: 3px solid black;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+}
+
+th {
+  background-color: #cc3300;
+  color: white;
+  border: 1px solid black;
+  padding: 8px;
+}
+
+td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+}

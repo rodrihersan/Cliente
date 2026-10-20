@@ -1,0 +1,49 @@
+body {
+  background-color: #fff0f5;
+  font-family: Tahoma, sans-serif;
+  padding: 10px;
+}
+
+h1 {
+  color: purple;
+  border-bottom: 4px double purple;
+  font-size: 28px;
+}
+
+.nota {
+  color: gray;
+  font-size: 13px;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: purple;
+  color: white;
+  padding: 10px;
+}
+
+td {
+  background-color: lavender;
+  border: 1px solid purple;
+  padding: 7px;
+  text-align: center;
+}
+
+tr:hover td {
+  background-color: plum;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  background-color: purple;
+  color: white;
+  border: 2px solid black;
+  padding: 10px;
+  font-size: 17px;
+}

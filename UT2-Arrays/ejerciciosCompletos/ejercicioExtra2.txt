@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carta de restaurante</title>
+</head>
+<body>
+    <h1>Carta de restaurante</h1>
+    <form>
+        <h2>Platos disponibles</h2>
+        <ul id="carta">
+            <li>Entrante
+                <ul>
+                    <li>Gazpacho ; 6 ; 0</li>
+                    <li>Tortilla ; 7.5 ; 4</li>
+                    <li>Croquetas ; 8 ; 6</li>
+                </ul>
+            </li>
+            <li>Principal
+                <ul>
+                    <li>Paella ; 14.5 ; 10</li>
+                    <li>Merluza ; 16 ; 0</li>
+                    <li>Cocido ; 13 ; 5</li>
+                </ul>
+            </li>
+            <li>Postre
+                <ul>
+                    <li>Flan ; 4 ; 12</li>
+                    <li>Tarta de queso ; 5.5 ; 3</li>
+                </ul>
+            </li>
+        </ul>
+
+        <label for="descuento">Descuento (%):</label>
+        <input type="number" id="descuento" value="10">
+
+        <button onclick="ejercicio8()">Analizar carta</button>
+    </form>
+
+    <script src="ejercicio8_anidadas.js"></script>
+</body>
+</html>
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+function ejercicio8() {
+    // Evita que el formulario se envíe y se recargue la página
+    window.event.preventDefault();
+
+    // ---------- 1. RECOGER LOS DATOS ----------
+
+    // Coge TODOS los li de la página (categorías y platos mezclados) y los pasa a array
+    let todosLi = Array.from(document.getElementsByTagName("li"));
+    // Se queda solo con los platos: los li que NO tienen ningún li dentro
+    let liPlatos = todosLi.filter(li => li.getElementsByTagName("li").length == 0);
+
+    // Convierte cada li de plato en una ficha
+    let platos = liPlatos.map(li => {
+        // Corta por ; y quita espacios: "Gazpacho ; 6 ; 0" -> ["Gazpacho", "6", "0"]
+        let partes = li.textContent.split(";").map(p => p.trim());
+        // Reparte los 3 datos en 3 variables
+        let [nombre, precio, unidades] = partes;
+        // parentNode = el elemento que contiene a este: primero el <ul> y luego el li de la categoría
+        let liCategoria = li.parentNode.parentNode;
+        // firstChild = lo primero que hay dentro del li de la categoría: el texto "Entrante"
+        let textoCategoria = liCategoria.firstChild.textContent.trim();
+        // Devuelve la ficha con los números convertidos
+        return {
+            nombre: nombre,
+            categoria: textoCategoria,
+            precio: Number(precio),
+            unidades: Number(unidades)
+        };
+    });
+
+    // Lee el descuento del input y lo pasa a número
+    let descuento = Number(document.getElementById("descuento").value);
+
+    // ---------- 2. COPIA DE SEGURIDAD Y ORDENAR POR PRECIO ----------
+
+    // slice() sin parámetros copia el array
+    let copia = platos.slice();
+    // Ordena la copia de menor a mayor precio
+    copia.sort((a, b) => a.precio - b.precio);
+
+    // Muestra los datos originales y los ordenados
+    console.log("Datos originales:");
+    console.log(platos);
+    console.log("Datos ordenados por precio:");
+    console.log(copia);
+
+    // ---------- 3. MOSTRAR LA CARTA CON FORMATO ----------
+
+    // Cada plato como "1. Paella (Principal) - 14.50 €"
+    let lineas = copia.map((p, i) => (i + 1) + ". " + p.nombre + " (" + p.categoria + ") - " + p.precio.toFixed(2) + " €");
+    // Un plato por línea
+    console.log(lineas.join("\n"));
+
+    // ---------- 4. PRECIO MEDIO Y VALOR EN COCINA ----------
+
+    // Suma de precios entre cuántos platos hay
+    let precioMedio = platos.reduce((total, p) => total + p.precio, 0) / platos.length;
+    // Suma de precio * unidades de cada plato
+    let valorCocina = platos.reduce((total, p) => total + p.precio * p.unidades, 0);
+    console.log("Precio medio: " + precioMedio.toFixed(2) + " €");
+    console.log("Valor total en cocina: " + valorCocina.toFixed(2) + " €");
+
+    // ---------- 5. PLATOS AGOTADOS ----------
+
+    // Nombres de los platos sin unidades
+    let agotados = platos.filter(p => p.unidades == 0).map(p => p.nombre);
+    // ¿Hay al menos un plato agotado?
+    let hayAgotados = platos.some(p => p.unidades == 0);
+    // ¿Todos cuestan menos de 20?
+    let todosBaratos = platos.every(p => p.precio < 20);
+    alert("Platos agotados: " + agotados.join(", ") +
+        "\n¿Hay algún plato agotado? " + (hayAgotados ? "Sí" : "No") +
+        "\n¿Todos cuestan menos de 20 €? " + (todosBaratos ? "Sí" : "No"));
+
+    // ---------- 6. CATEGORÍAS DISTINTAS ----------
+
+    // Categorías sin repetir (nos quedamos con cada una solo en su primera aparición) y ordenadas
+    let categorias = platos.map(p => p.categoria)
+        .filter((c, i, array) => array.indexOf(c) == i)
+        .sort();
+    console.log("Categorías: " + categorias.join(" | "));
+
+    // ---------- 7. TRES MÁS BARATOS Y EL MÁS CARO ----------
+
+    // La copia está ordenada de barato a caro: las tres primeras posiciones
+    let tresBaratos = copia.slice(0, 3).map(p => p.nombre);
+    alert("Los tres platos más baratos: " + tresBaratos.join(", "));
+    // El más caro es el último de la copia
+    let masCaro = copia[copia.length - 1];
+    alert("El plato más caro: " + masCaro.nombre + " (" + masCaro.precio.toFixed(2) + " €)");
+
+    // ---------- 8. PEDIR UNA CATEGORÍA Y MOSTRAR SUS PLATOS ----------
+
+    // Pide la categoría hasta que exista
+    let categoria = pedirCategoria(categorias);
+    // Si pulsó Cancelar, termina
+    if (categoria === null) {
+        return;
+    }
+
+    // Platos de esa categoría, del más caro al más barato
+    let delaCategoria = platos.filter(p => p.categoria == categoria).sort((a, b) => b.precio - a.precio);
+    console.log("Platos de " + categoria + ":\n" +
+        delaCategoria.map(p => p.nombre + " - " + p.precio.toFixed(2) + " €").join("\n"));
+
+    // ---------- 9. DESCUENTO A ESA CATEGORÍA ----------
+
+    // Pregunta si se aplica el descuento
+    if (confirm("¿Aplicar un " + descuento + "% de descuento a " + categoria + "?")) {
+        // Array nuevo con precios rebajados; el original no se toca
+        let rebajados = platos.map(p => {
+            // Si es de la categoría elegida, ficha nueva con el precio rebajado
+            if (p.categoria == categoria) {
+                return {
+                    nombre: p.nombre,
+                    categoria: p.categoria,
+                    precio: p.precio * (1 - descuento / 100),
+                    unidades: p.unidades
+                };
+            }
+            // Si no, el plato tal cual
+            return p;
+        });
+        // Valor de la cocina con los precios nuevos
+        let valorRebajado = rebajados.reduce((total, p) => total + p.precio * p.unidades, 0);
+        // Cuánto baja = valor antes - valor ahora
+        alert("El valor de la cocina baja " + (valorCocina - valorRebajado).toFixed(2) + " €");
+    }
+
+    // ---------- 10. PEDIDO ----------
+
+    // Pedido vacío; la función recursiva lo irá llenando
+    let pedido = [];
+    pedirPlato(platos, pedido);
+
+    // Precio total del pedido
+    let totalPedido = pedido.reduce((total, p) => total + p.precio, 0);
+    alert("Pedido: " + pedido.map(p => p.nombre).join(", ") +
+        "\nTotal: " + totalPedido.toFixed(2) + " €");
+}
+
+function pedirCategoria(categorias) {
+    // Pide la categoría
+    let valor = prompt("Introduce una categoría (" + categorias.join(", ") + "):");
+    // Cancelar devuelve null
+    if (valor === null) {
+        return null;
+    }
+    // Busca sin distinguir mayúsculas (undefined si no existe)
+    let encontrada = categorias.find(c => c.toLowerCase() == valor.trim().toLowerCase());
+    // Si no existe, avisa y la pide de nuevo (recursividad)
+    if (encontrada === undefined) {
+        alert("Esa categoría no existe");
+        return pedirCategoria(categorias);
+    }
+    // Si existe, la devuelve
+    return encontrada;
+}
+
+function pedirPlato(platos, pedido) {
+    // Pide un plato
+    let valor = prompt("Introduce un plato para el pedido (un número para terminar):");
+    // Cancelar termina
+    if (valor === null) {
+        return;
+    }
+    // Quita espacios de los lados
+    let nombre = valor.trim();
+    // Un número termina
+    if (nombre != "" && !isNaN(nombre)) {
+        return;
+    }
+    // Solo trabaja si ha escrito algo
+    if (nombre != "") {
+        // Busca el plato sin distinguir mayúsculas
+        let plato = platos.find(p => p.nombre.toLowerCase() == nombre.toLowerCase());
+        if (plato === undefined) {
+            alert("Ese plato no existe");
+        } else if (plato.unidades == 0) {
+            alert("Ese plato está agotado");
+        } else {
+            // Existe y hay unidades: al pedido
+            pedido.push(plato);
+        }
+    }
+    // Pide el siguiente plato
+    pedirPlato(platos, pedido);
+}

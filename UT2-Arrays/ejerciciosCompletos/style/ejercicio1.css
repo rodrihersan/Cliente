@@ -1,0 +1,37 @@
+body {
+  background-color: lightyellow;
+  font-family: Verdana;
+  margin: 20px;
+}
+
+h1 {
+  color: darkgreen;
+  text-align: center;
+}
+
+.nota {
+  color: red;
+  font-size: 12px;
+}
+
+form {
+  border: 2px solid green;
+  padding: 10px;
+  margin: auto;
+  margin-top: 15px;
+  width: 60%;
+  text-align: center;
+}
+
+textarea {
+  width: 95%;
+  height: 100px;
+}
+
+button {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  margin-top: 10px;
+}
