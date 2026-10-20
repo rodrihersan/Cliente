@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de productos</title>
-    <script src="../Ejercicio1/js/principal.js" defer></script>
+  <meta charset="UTF-8">
+  <title>Lista de la compra</title>
+  <script src="../Ejercicio1/js/principal.js" defer></script>
 </head>
 <body>
-    <h1>Lista de productos</h1>
-    <p>Introduce los productos separados por comas:</p>
-    <input type="text" id="listaProductos" size="60" placeholder="manzana, pera, Plátano">
-    <button id="btnProcesar">Procesar lista</button>
-
-    <script src="script.js"></script>
+  <h1>Lista de la compra</h1>
+  <p>Escribe los productos separados por comas:</p>
+  <textarea id="lista" rows="4" cols="40">pan, Leche , huevos,  arroz</textarea>
+  <br>
+  <!--<button id="boton">Procesar lista</button>-->
+  <button onclick="procesar()">Procesar lista</button>
 </body>
 </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario de la tienda</title>
+  <link rel="stylesheet" href="../style/ejercicio5.css">
+</head>
+
+<body>
+  <h1>Inventario de la tienda</h1>
+  <section>
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Categoría</th>
+          <th>Precio (€)</th>
+          <th>Stock</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Portátil</td>
+          <td>Informática</td>
+          <td>749.90</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>Ratón</td>
+          <td>Informática</td>
+          <td>12.50</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>Teclado</td>
+          <td>Informática</td>
+          <td>29.99</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Monitor</td>
+          <td>Informática</td>
+          <td>189</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>Silla</td>
+          <td>Mobiliario</td>
+          <td>99.90</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td>Mesa</td>
+          <td>Mobiliario</td>
+          <td>145</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Lámpara</td>
+          <td>Mobiliario</td>
+          <td>24.50</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>Cuaderno</td>
+          <td>Papelería</td>
+          <td>2.30</td>
+          <td>150</td>
+        </tr>
+        <tr>
+          <td>Bolígrafos</td>
+          <td>Papelería</td>
+          <td>3.90</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>Mochila</td>
+          <td>Accesorios</td>
+          <td>35</td>
+          <td>15</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <label for="iva">IVA (%)</label>
+    <input type="number" id="iva" value="21">
+    <label for="descuento">Descuento (%)</label>
+    <input type="number" id="descuento" value="10">
+  </section>
+  <button onclick="ejercicio5()">Gestionar inventario</button>
+</body>
+
+</html>
