@@ -1,0 +1,13 @@
+{
+"clientes": [
+ {
+    "id": 1,
+    "nombre": "Sonia",
+    "apellidos": "Gutiérrez García",
+    "DNI": "45893125t",
+    "fechaNac": "10/10/1010",
+    "Sexo": "F",
+    "preferencias": "ext_equi"
+ }
+]
+}
