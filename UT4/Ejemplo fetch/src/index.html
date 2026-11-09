@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../scripts/ejemploAjaxFetch.js"></script>
+    <title>Llamada AJAX</title>
+</head>
+
+<body>
+    <h1>Mostrar posts de un usuario</h1>
+    <form action="#" id="form">
+        <label for="idUser">Introduce el id del usuario: </label>
+        <input type="text" id="idUser" size="2">
+        <input type="button" value="Mostrar posts" onclick="recuperarDatos()">
+        <input type="button" value="Ver usuarios" onclick="comprobarEjemplo3_1()">
+        <input type="button" value="Nuevo usuario" onclick="ejemploPost()">
+        <input type="button" value="Mostrar tareas" onclick="mostrarTareas()">
+    </form>
+    <table>
+        <tr>
+            <th>userId</th>
+            <th>Id</th>
+            <th>Título</th>
+            <th>Post</th>
+        </tr>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+
+</html>
