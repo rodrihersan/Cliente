@@ -1,8 +1,9 @@
 const URL = "http://localhost:3000/"
+
 async function verNuevoUsuario(){
     let datoSeleccionado = document.getElementById("nombre").value;
     
-    datoSeleccionado.addEvenListener('change', async function(){
+    datoSeleccionado.addEventListener('change', async function(){
         let usuarioCreado = obtenerNuevoUsuario();
         let init = {
                 method: 'POST',
