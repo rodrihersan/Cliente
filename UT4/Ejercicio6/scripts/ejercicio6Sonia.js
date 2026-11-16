@@ -1,16 +1,19 @@
 async function altaNuevoCliente(){
-    let nombreCliente = "Sonia";
-    let apellidosCliente = "Gutierrez Garcia";
-    let dniCliente = "709798W"
-    let fechaCliente = "25/15/2000";
-    let sexoCliente = "M";
-    let preferenciasCliente = "equipo_text";
+    let nombreCliente = document.getElementById("nombre").value;
+    let apellidosCliente = document.getElementById("apellidos").value;
+    let dniCliente = document.getElementById("dni").value;
+    let fechaNacCliente = document.getElementById("fechaNac").value;
+    let sexoCliente = document.querySelector("input[name='sexo' ] : checked").value;
+    let elementosPreferenciasCliente = Array. from(document.querySelectorAll("input[name=' deportes']:checked"));
 
+    let preferenciasClienteValores = elementosPreferenciasCliente.map(element => element. value);
+    let preferenciasCliente = preferenciasClienteValores.join("_");
+    
     let datosNuevosClientes = {
         nombre: nombreCliente,
         apellidos: apellidosCliente,
         DNI: dniCliente,
-        fechaNac: fechaCliente,
+        fechaNac: fechaNacCliente,
         Sexo: sexoCliente,
         preferencias: preferenciasCliente
     }
