@@ -22,3 +22,4 @@ function mostrarDatos(datosAnimales){
     });
     document.body.appendChild(tablaAnimales);
 }
+
