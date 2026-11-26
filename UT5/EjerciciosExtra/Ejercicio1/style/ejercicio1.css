@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedorPrincipal {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 16px;
+    width: 300px;
+}
+
+h1 {
+    padding: 5px 0;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 10px;
+}
+
+#password {
+    padding: 10px;
+    font-size: 14px;
+    border: solid 2px #f0f0f0;
+    border-radius: 5px;
+    width: 80%;
+}
+
+#botonVer {
+    display: inline;
+    padding: 10px;
+    font-size: 12px;
+    border: solid 2px #f0f0f0;
+    border-radius: 5px;
+}

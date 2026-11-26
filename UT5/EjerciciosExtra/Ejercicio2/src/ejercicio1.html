@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3 en raya</title>
+    <link rel="stylesheet" href="../style/ejercicio2.css">
+    <script src="../scripts/ejercicio2.js" defer></script>
+</head>
+
+<body>
+
+    <h1>3 EN RAYA</h1>
+
+    <!-- Campos para introducir los nombres de los jugadores -->
+    <div class="jugadores">
+        <input type="text" id="jugador1" placeholder="Jugador 1">
+        <input type="text" id="jugador2" placeholder="Jugador 2">
+
+        <button onclick="iniciarPartida()">Iniciar Partida</button>
+    </div>
+
+    <!-- Tablero de juego -->
+    <div class="tablero">
+
+        <button class="casilla" id="casilla0" onclick="jugar(0)" disabled></button>
+        <button class="casilla" id="casilla1" onclick="jugar(1)" disabled></button>
+        <button class="casilla" id="casilla2" onclick="jugar(2)" disabled></button>
+
+        <button class="casilla" id="casilla3" onclick="jugar(3)" disabled></button>
+        <button class="casilla" id="casilla4" onclick="jugar(4)" disabled></button>
+        <button class="casilla" id="casilla5" onclick="jugar(5)" disabled></button>
+
+        <button class="casilla" id="casilla6" onclick="jugar(6)" disabled></button>
+        <button class="casilla" id="casilla7" onclick="jugar(7)" disabled></button>
+        <button class="casilla" id="casilla8" onclick="jugar(8)" disabled></button>
+
+    </div>
+
+    <!-- Botón para reiniciar la partida -->
+    <div class="reiniciar">
+        <button onclick="reiniciarPartida()">Reiniciar</button>
+    </div>
+
+</body>
+
+</html>
