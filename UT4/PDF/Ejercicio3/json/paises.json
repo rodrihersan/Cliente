@@ -1,0 +1,20 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "usuario": "rodrigo",
+      "contrasena": "1234"
+    },
+    {
+      "id": "2",
+      "usuario": "ana",
+      "contrasena": "5678"
+    },
+    {
+      "usuario": "pepito",
+      "contrasena": "1234",
+      "id": "h4WAPgntXCk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

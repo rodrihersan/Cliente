@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <title>Visibilizar contraseña</title>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Pintar</title>
     <link rel="stylesheet" href="../style/ejercicio1.css">
-    <script src="../scripts/ejercicio1.js"></script>
+    <script src="../scripts/main.js" defer></script>
 </head>
 
 <body>
-    <div class="contenedorPrincipal">
-        <h1>Cambiar contraseña</h1>
-        <input type="password" name="password" id="password" placeholder="Introduce la nueva contraseña">
-        <button type="button" id="botonVer" onclick="verPassword();">Ver</button>
+
+    <div class="selector">
+        <!-- Selector para elegir el color -->
+        <input type="color" id="selectorColor">
+
+        <!-- Botón para aplicar el color -->
+        <button onclick="aplicarColor()">Aplicar Color</button>
     </div>
+
+    <!-- Recuadro que muestra el color seleccionado -->
+    <div id="colorActual"></div>
+
+    <!-- Zona donde se dibuja -->
+    <div id="zonaDibujo"></div>
+
 </body>
 
 </html>

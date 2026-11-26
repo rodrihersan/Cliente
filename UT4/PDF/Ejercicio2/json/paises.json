@@ -1,0 +1,41 @@
+{
+  "facturas": [
+    {
+      "id": "1",
+      "descripcion": "Compra supermercado",
+      "precio": 45.5,
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "2",
+      "descripcion": "Compra ropa",
+      "precio": 80,
+      "fecha": "2026-11-26"
+    },
+    {
+      "id": "3",
+      "descripcion": "Material informático",
+      "precio": 120,
+      "fecha": "2026-11-25"
+    },
+    {
+      "id": "4",
+      "descripcion": "Compra libros",
+      "precio": 25,
+      "fecha": "2026-11-26"
+    },
+    {
+      "descripcion": "no se que poner",
+      "precio": 85,
+      "fecha": "2002-05-08",
+      "id": "QdKaBBOjNWg"
+    },
+    {
+      "descripcion": "no se que mas pioner por dosh",
+      "precio": 85,
+      "fecha": "2005-05-05",
+      "id": "ACgCbCmPdN4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

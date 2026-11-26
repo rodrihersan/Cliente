@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de libros</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../javascript/ejercicio1.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Buscador de libros OpenLibra</h1>
+
+    <!-- Sección de login -->
+    <section id="login">
+
+        <form class="formulario">
+
+            <h2>Iniciar sesión</h2>
+
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" required>
+
+            <button type="button" onclick="iniciarSesion()">
+                Entrar
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Sección que aparece después del login -->
+    <section id="contenido" hidden>
+
+        <h2 id="bienvenida"></h2>
+
+        <div class="buscador">
+
+            <label for="palabraClave">Palabra clave:</label>
+            <input type="text" id="palabraClave">
+
+            <button type="button" onclick="buscarLibros()">
+                Buscar libros
+            </button>
+
+        </div>
+
+        <div id="resultados">
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

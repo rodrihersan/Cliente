@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Formulario de login */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: auto;
+}
+
+/* Campos */
+input {
+    padding: 8px;
+}
+
+/* Botones */
+button {
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Buscador */
+.buscador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Resultados */
+#resultados {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.libro {
+    border: 1px solid grey;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.libro a {
+    display: block;
+    margin-top: 8px;
+}

@@ -1,0 +1,81 @@
+{
+  "paises": [
+    {
+      "id": "1",
+      "nombre": "España"
+    },
+    {
+      "id": "2",
+      "nombre": "Francia"
+    },
+    {
+      "id": "3",
+      "nombre": "Italia"
+    }
+  ],
+  "ciudades": [
+    {
+      "id": "1",
+      "nombre": "Salamanca",
+      "pais": "España"
+    },
+    {
+      "id": "2",
+      "nombre": "Madrid",
+      "pais": "España"
+    },
+    {
+      "id": "3",
+      "nombre": "París",
+      "pais": "Francia"
+    },
+    {
+      "id": "4",
+      "nombre": "Roma",
+      "pais": "Italia"
+    },
+    {
+      "nombre": "Barcelona",
+      "pais": "España",
+      "id": "j2MXMSuZlvk"
+    }
+  ],
+  "monumentos": [
+    {
+      "id": "1",
+      "ciudad": "Salamanca",
+      "nombre": "Catedral"
+    },
+    {
+      "id": "2",
+      "ciudad": "Salamanca",
+      "nombre": "Casa de las Conchas"
+    },
+    {
+      "id": "3",
+      "ciudad": "Madrid",
+      "nombre": "Palacio Real"
+    },
+    {
+      "id": "4",
+      "ciudad": "París",
+      "nombre": "Torre Eiffel"
+    },
+    {
+      "id": "5",
+      "ciudad": "Roma",
+      "nombre": "Coliseo"
+    },
+    {
+      "ciudad": "Salamanca",
+      "nombre": "CASA LIS",
+      "id": "7wUbzQDVsls"
+    },
+    {
+      "ciudad": "Barcelona",
+      "nombre": "morosconcuchillo",
+      "id": "w9IAZGRJi2g"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

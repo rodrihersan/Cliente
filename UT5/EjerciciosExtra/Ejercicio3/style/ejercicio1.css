@@ -4,35 +4,40 @@
     box-sizing: border-box;
 }
 
-.contenedorPrincipal {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    margin: 10px auto;
-    padding: 16px;
-    width: 300px;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-h1 {
-    padding: 5px 0;
-    font-size: 1.2em;
-    text-align: center;
+/* Selector de color y botón */
+.selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+/* Recuadro que muestra el color elegido */
+#colorActual {
+    width: 100px;
+    height: 100px;
+    background-color: #204b75;
     margin: 10px;
 }
 
-#password {
-    padding: 10px;
-    font-size: 14px;
-    border: solid 2px #f0f0f0;
-    border-radius: 5px;
-    width: 80%;
+/* Zona de dibujo */
+#zonaDibujo {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    background-color: lightgrey;
+    margin: 10px;
 }
 
-#botonVer {
-    display: inline;
-    padding: 10px;
-    font-size: 12px;
-    border: solid 2px #f0f0f0;
-    border-radius: 5px;
+/* Cada uno de los 100 recuadros */
+.cuadro {
+    width: 10%;
+    height: 10%;
 }

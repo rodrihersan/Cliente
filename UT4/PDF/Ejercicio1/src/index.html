@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países y monumentos</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../javascript/ejercicio1.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Países y monumentos</h1>
+
+    <div class="formularios">
+
+        <!-- Primer formulario: consultar monumentos -->
+        <form class="formulario">
+
+            <h2>Consultar monumentos</h2>
+
+            <label for="pais">País:</label>
+            <select id="pais" onchange="cargarCiudades()">
+                <option value="">Selecciona un país</option>
+            </select>
+
+            <label for="ciudad">Ciudad:</label>
+            <select id="ciudad">
+                <option value="">Selecciona una ciudad</option>
+            </select>
+
+            <button type="button" onclick="mostrarMonumentos()">
+                Mostrar Monumentos
+            </button>
+
+        </form>
+
+        <!-- Segundo formulario: añadir datos -->
+        <form class="formulario">
+
+            <h2>Añadir monumento</h2>
+
+            <label for="nuevoPais">País:</label>
+            <input type="text" id="nuevoPais" required>
+
+            <label for="nuevaCiudad">Ciudad:</label>
+            <input type="text" id="nuevaCiudad" required>
+
+            <label for="nuevoMonumento">Monumento:</label>
+            <input type="text" id="nuevoMonumento" required>
+
+            <button type="button" onclick="enviarDatos()">
+                Enviar
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Tabla de monumentos -->
+    <table>
+
+        <thead>
+            <tr>
+                <th>Monumento</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaMonumentos">
+
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
